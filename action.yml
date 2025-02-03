@@ -5,7 +5,7 @@ runs:
   using: "composite"
 
   steps:
-    - name: Copy config
+    - name: run script
       continue-on-error: false
-      run: entrypoint.sh
+      run: ./entrypoint.sh
       shell: bash
