@@ -155,7 +155,7 @@ then
 fi
 
 # get the merge commit message looking for #bumps
-declare -A history_type=(
+declare -a history_type=(
     ["last"]="$(git show -s --format=%B)" \
     ["full"]="$(git log "${default_branch}"..HEAD --format=%B)" \
     ["compare"]="$(git log "${tag_commit}".."${commit}" --format=%B)" \
