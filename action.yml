@@ -1,16 +1,11 @@
 name: 'Github Tag Bump'
-description: 'Bump and push git tag on merge'
-author: 'Nick Sjostrom'
+description: 'Bump and push git tag'
+
 runs:
-  using: 'docker'
-  image: 'Dockerfile'
-outputs:
-  new_tag:
-    description: 'Generated tag'
-  tag:
-    description: 'The latest tag after running this action'
-  part:
-    description: 'The part of version which was bumped'
-branding:
-  icon: 'git-merge'  
-  color: 'purple'
+  using: "composite"
+
+  steps:
+    - name: Copy config
+      continue-on-error: false
+      run: entrypoint.sh
+      shell: bash
