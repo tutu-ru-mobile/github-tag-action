@@ -8,5 +8,5 @@ runs:
     - uses: actions/checkout@master
     - name: run script
       continue-on-error: false
-      run: ./entrypoint.sh
+      run:  ${{ github.action_path }}/entrypoint.sh
       shell: bash
